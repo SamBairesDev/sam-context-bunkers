@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @liquid.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @liquid.price %>
+</p>
+
+<p>
+  <strong>Strength:</strong>
+  <%= @liquid.strength %>
+</p>
+
+<p>
+  <strong>Flavor:</strong>
+  <%= @liquid.flavor %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @liquid.size %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @liquid.brand %>
+</p>
+
+<%= link_to 'Edit', edit_liquid_path(@liquid) %> |
+<%= link_to 'Back', liquids_path %>

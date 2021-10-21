@@ -1,0 +1,47 @@
+<%= form_with(model: liquid) do |form| %>
+  <% if liquid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(liquid.errors.count, "error") %> prohibited this liquid from being saved:</h2>
+
+      <ul>
+        <% liquid.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strength %>
+    <%= form.text_field :strength %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flavor %>
+    <%= form.text_field :flavor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

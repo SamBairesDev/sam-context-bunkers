@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vaper.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @vaper.price %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @vaper.brand %>
+</p>
+
+<p>
+  <strong>Waranty time:</strong>
+  <%= @vaper.waranty_time %>
+</p>
+
+<%= link_to 'Edit', edit_vaper_path(@vaper) %> |
+<%= link_to 'Back', vapers_path %>

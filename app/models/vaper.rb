@@ -1,0 +1,2 @@
+class Vaper < ApplicationRecord
+end

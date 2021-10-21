@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open: false
+  date_opened: 2021-10-21 17:41:14
+  date_closed: 2021-10-21 17:41:14
+  user: one
+
+two:
+  open: false
+  date_opened: 2021-10-21 17:41:14
+  date_closed: 2021-10-21 17:41:14
+  user: two

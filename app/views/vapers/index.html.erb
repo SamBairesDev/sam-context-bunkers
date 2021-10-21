@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vapers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Brand</th>
+      <th>Waranty time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vapers.each do |vaper| %>
+      <tr>
+        <td><%= vaper.name %></td>
+        <td><%= vaper.price %></td>
+        <td><%= vaper.brand %></td>
+        <td><%= vaper.waranty_time %></td>
+        <td><%= link_to 'Show', vaper %></td>
+        <td><%= link_to 'Edit', edit_vaper_path(vaper) %></td>
+        <td><%= link_to 'Destroy', vaper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vaper', new_vaper_path %>

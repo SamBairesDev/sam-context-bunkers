@@ -1,0 +1,2 @@
+module VapersHelper
+end

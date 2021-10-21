@@ -1,0 +1,2 @@
+class Liquid < ApplicationRecord
+end
