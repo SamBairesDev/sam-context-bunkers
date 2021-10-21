@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_204114) do
+ActiveRecord::Schema.define(version: 2021_10_21_210539) do
+
+  create_table "accessories", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "accessories_vapers", id: false, force: :cascade do |t|
+    t.integer "accessory_id", null: false
+    t.integer "vaper_id", null: false
+  end
+
+  create_table "liquids", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "strength"
+    t.string "flavor"
+    t.float "size"
+    t.string "brand"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.boolean "open"
@@ -32,6 +55,15 @@ ActiveRecord::Schema.define(version: 2021_10_21_204114) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vapers", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "brand"
+    t.string "waranty_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "orders", "users"
