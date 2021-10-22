@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<% if can? :create, Order %>
+  <%= link_to 'New Order', new_order_path %>
+<% end %>

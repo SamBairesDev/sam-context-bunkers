@@ -34,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New Liquid', new_liquid_path %>
+<% if can? :create, Liquid %>
+  <%= link_to 'New Liquid', new_liquid_path %>
+<% end %>

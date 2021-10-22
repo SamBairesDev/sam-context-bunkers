@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /orders or /orders.json
   def index

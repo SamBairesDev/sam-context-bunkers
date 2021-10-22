@@ -1,5 +1,6 @@
 class LiquidsController < ApplicationController
   before_action :set_liquid, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /liquids or /liquids.json
   def index

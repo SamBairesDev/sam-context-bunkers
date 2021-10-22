@@ -26,4 +26,6 @@
 
 <br>
 
-<%= link_to 'New Accessory', new_accessory_path %>
+<% if can? :create, Accessory %>
+  <%= link_to 'New Accessory', new_accessory_path %>
+<% end %>
