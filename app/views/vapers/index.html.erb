@@ -21,8 +21,12 @@
         <td><%= vaper.brand %></td>
         <td><%= vaper.waranty_time %></td>
         <td><%= link_to 'Show', vaper %></td>
-        <td><%= link_to 'Edit', edit_vaper_path(vaper) %></td>
-        <td><%= link_to 'Destroy', vaper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :create, Vaper %>
+          <td><%= link_to 'Edit', edit_vaper_path(vaper) %></td>
+        <% end %>
+        <% if can? :create, Vaper %>
+          <td><%= link_to 'Destroy', vaper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New Vaper', new_vaper_path %>
+<% if can? :create, Vaper %>
+  <%= link_to 'New Vaper', new_vaper_path %>
+<% end %>

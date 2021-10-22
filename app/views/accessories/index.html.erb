@@ -17,8 +17,12 @@
         <td><%= accessory.name %></td>
         <td><%= accessory.price %></td>
         <td><%= link_to 'Show', accessory %></td>
-        <td><%= link_to 'Edit', edit_accessory_path(accessory) %></td>
-        <td><%= link_to 'Destroy', accessory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :update, Accessory %>
+          <td><%= link_to 'Edit', edit_accessory_path(accessory) %></td>
+        <% end %>
+        <% if can? :destroy, Accessory %>
+          <td><%= link_to 'Destroy', accessory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
