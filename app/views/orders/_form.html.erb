@@ -11,25 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :open %>
-    <%= form.check_box :open %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date_opened %>
-    <%= form.datetime_select :date_opened %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date_closed %>
-    <%= form.datetime_select :date_closed %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
     <%= form.submit %>

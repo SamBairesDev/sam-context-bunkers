@@ -22,6 +22,10 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
+    @order.open = true
+    @order.date_opened = DateTime.now
+    @order.date_closed = nil
+    
 
     respond_to do |format|
       if @order.save
