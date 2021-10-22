@@ -2,4 +2,70 @@
 
 <%= render 'form', order: @order %>
 
+<table>
+  <thead>
+    <tr>
+      <th>Vaper Name</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vapers.each do |vaper| %>
+      <tr>
+        <td><%= vaper.name %></td>
+        <td><%= vaper.price %> USD</td>
+        <td><%= link_to 'Show', vaper %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accessory Name</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accessories.each do |accessory| %>
+      <tr>
+        <td><%= accessory.name %></td>
+        <td><%= accessory.price %> USD</td>
+        <td><%= link_to 'Show', accessory %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Liquid Name</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @liquids.each do |liquid| %>
+      <tr>
+        <td><%= liquid.name %></td>
+        <td><%= liquid.price %> USD</td>
+        <td><%= link_to 'Show', liquid %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Back', orders_path %>

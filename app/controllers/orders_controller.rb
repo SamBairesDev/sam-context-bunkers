@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.order.all
+    end
   end
 
   # GET /orders/1 or /orders/1.json
@@ -13,6 +17,10 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    @vapers = Vaper.all
+    @accessories = Accessory.all
+    @liquids = Liquid.all
+
     @order = Order.new
   end
 
@@ -27,7 +35,6 @@ class OrdersController < ApplicationController
     @order.date_opened = DateTime.now
     @order.date_closed = nil
     
-
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: "Order was successfully created." }
